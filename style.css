@@ -1,0 +1,332 @@
+:root {
+  --Brand-Navy: #00356B;
+  --Brand-Yellow: #F3B000;
+  --Neutral-White: white;
+  --Neutral-Gray_100: #596062;
+  --Labels-Vibrant-Controls-Primary: #404040;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Kumbh Sans, Inter, Cairo, sans-serif;
+}
+
+.Header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--Brand-Navy);
+  padding: 24px 15px;
+  width: 100%;
+}
+
+.Header .Logo01 {
+  width: 124px;
+  height: 46px;
+}
+
+.Menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Menu > div {
+  color: var(--Neutral-White);
+  font-size: 16px;
+  font-family: Cairo;
+  font-weight: 400;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.Hero {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 628px;
+  position: absolute; 
+  background-image: url(https://placehold.co/1208x628)
+}
+
+.Hero .Container {
+  background: rgba(0, 53, 107, 0.5);
+  position: absolute;
+  width: 100%; 
+  height: 628px; 
+  left: 0px; 
+  top: 0px;
+  inset: 0;
+}
+
+
+
+
+.TextContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+}
+
+.TuCaminoAlXitoComienzaAqu {
+  color: white;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 67.2px;
+}
+
+.Hero .TextContainer > div:nth-child(2) {
+  width: 528px;
+  color: white;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Buttons */
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  gap: 8px;
+}
+
+.Button[ data-type="Secondary" ], .Button.secondary {
+  height: 48px;
+  padding: 12px 24px;
+  background: var(--Brand-Yellow);
+  color: var(--Brand-Navy);
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.Button.outline-white, .Button[ data-type="Outline White" ] {
+  width: 255px;
+  height: 48px;
+  padding: 12px 24px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  outline: 1px var(--Neutral-White) solid;
+  outline-offset: -1px;
+  color: var(--Neutral-White);
+  background: transparent;
+  font-weight: 700;
+}
+
+/* Academic process cards */
+.AcademiProcess, .Academicprograms, .NewsSection, .ContactSection, .Footer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.AcademiProcess{
+    width: 100%; 
+    height: 559px; 
+    top: 722px; 
+    position: absolute; 
+    background-image: url(https://placehold.co/1208x559); 
+    justify-content: center; 
+    align-items: center;
+}
+
+.AcademiProcess .BackgroundImage {
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.Container {
+  display: inline-flex;
+  flex-direction: column;
+  width: 670px; 
+  padding: 10px; 
+  top: 92px; 
+  position: absolute; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 10px; 
+}
+
+/* Texto reutilizable */
+.KumbhTitle {
+  color: var(--Brand-Navy);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.TuFuturoComienzaHoyNosotrosTeGuiamos {
+  width: 321px;
+  color: var(--Brand-Navy);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+}
+
+.EnUnivoTeAcompaAmosAConvertirTusMetasEnLogrosRealesDescubreNuestrasCarrerasConoceElProcesoDeAdmisiNYDaElPrimerPasoConConfianza {
+  width: 356px;
+  color: var(--Brand-Navy);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.8px;
+}
+
+/* Cards dentro del proceso */
+.ListProcess {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProcessCard {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 186px;
+  height: 173px;
+  background: var(--Brand-Navy);
+  padding: 5px 0;
+  color: var(--Neutral-White);
+}
+
+.ProcessCard .Vector {
+  background: var(--Neutral-White);
+}
+
+/* Botón amarillo dentro de AcademiProcess */
+.AcademiProcess .Button {
+  height: 35px;
+  padding: 0 12px;
+  background: var(--Brand-Yellow);
+  border-radius: 50px;
+}
+
+.ExploraTuFuturo {
+  color: var(--Brand-Navy);
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* News section */
+.NewsSection .TextContainer {
+  padding: 0 40px;
+}
+
+.AcontecerUnivo {
+  color: var(--Brand-Navy);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 57.6px;
+}
+
+.EnteratDeTodasLasNovedades {
+  color: var(--Brand-Navy);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 38.4px;
+}
+
+.NewsContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Newscard {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 497px;
+  height: 581px;
+  padding: 23px 26px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Footer */
+.Footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F3EEEE;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+
+.Footer .Logo img {
+  width: 200px;
+  height: 74px;
+}
+
+.Frame237, .Frame235 {
+  display: inline-flex;
+  gap: 20px;
+}
+
+/* Contact section */
+.ContactSection {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: var(--Brand-Navy);
+  color: var(--Neutral-White);
+}
+
+.ContactSection .Title {
+  color: var(--Neutral-White);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+/* Form styles (visual only: input elements are not present in HTML) */
+.FormContainer {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.FormContainer .Form > div > .Line1,
+.FormContainer .Form > div > .Line2,
+.FormContainer .Form > div > .Line3,
+.FormContainer .Form > div > .Line4 {
+  height: 0;
+  outline: 1px var(--Neutral-White) solid;
+  outline-offset: -0.5px;
+}
+
+/* Cards carousel */
+.Carouselcard {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-content: center;
+}
+
+.Cardacademic {
+  position: relative;
+  border-radius: 10.53px;
+  overflow: hidden;
+}
+
+.Cardacademic .Imagecard {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10.53px;
+}
+
+/* Small utilities */
+.align-center { display:flex; align-items:center; justify-content:center; }
+.text-center { text-align:center; }
