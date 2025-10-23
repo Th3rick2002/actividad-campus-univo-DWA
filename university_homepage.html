@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universidad UNIVO - Tu camino al éxito</title>
-    <link rel="stylesheet" href="./styles/university_website_styles.css">
+    <link rel="stylesheet" href="styles/university_homeStyles.css">
 </head>
 <body>
 
 <!-- Header -->
 <header class="header">
-    <img src="logo.svg" alt="Logo UNIVO" class="logo">
+    <img src="img/logoUNIVO_white.png" alt="Logo UNIVO" class="logo">
     <nav class="nav">
         <a href="#inicio" class="nav-link">Inicio</a>
         <a href="#nosotros" class="nav-link">Nosotros</a>
@@ -75,10 +75,58 @@
                     <p>Campus modernos, clases virtuales y apoyo constante.</p>
                 </article>
             </div>
-            <button class="btn btn-yellow">Explora tu Futuro</button>
+            <button class="btn btn-primary">Explora tu Futuro</button>
         </div>
     </div>
 </section>
+
+
+<!-- Faculties Section -->
+<section class="faculties">
+    <div class="container">
+        <header class="section-header">
+            <h2>Nuestras facultades</h2>
+            <p>Descubre tu camino al éxito.</p>
+        </header>
+
+        <div class="carousel">
+            <div class="carousel-track">
+                <article class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="img/IMGFacultities/ing_arqui.jpg" alt="Facultad de Ingeniería y Arquitectura">
+                        <h3>Facultad de Ingeniería y Arquitectura</h3>
+                    </div>
+                    <button class="btn btn-info">Más información</button>
+                </article>
+
+                <article class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="img/IMGFacultities/JUEZ1.jpg" alt="Facultad de Ciencias Jurídicas">
+                        <h3>Facultad de Ciencias Jurídicas</h3>
+                    </div>
+                    <button class="btn btn-info">Más información</button>
+                </article>
+
+                <article class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="img/IMGFacultities/deposalud.jpg" alt="Facultad Ciencias de la Salud">
+                        <h3>Facultad Ciencias de la Salud</h3>
+                    </div>
+                    <button class="btn btn-info">Más información</button>
+                </article>
+            </div>
+            <button class="carousel-btn" aria-label="Siguiente">
+                <span class="arrow-icon"></span>
+            </button>
+        </div>
+        <div class="faculties-action">
+            <a href="#todas-facultades" class="btn btn-outline-dark">Ver todas las facultades</a>
+        </div>
+    </div>
+</section>
+
+
+
 
 <!-- News Section -->
 <section class="news">
@@ -126,33 +174,6 @@
                     </div>
                 </div>
             </article>
-
-            <article class="news-card news-card-wide">
-                <img src="https://placehold.co/800x400" alt="Graduación">
-                <div class="news-content">
-                    <span class="badge">New</span>
-                    <h3>Universidad de Oriente celebra su CXI Graduación</h3>
-                    <p>Una ceremonia memorable que celebra el esfuerzo y dedicación de nuestros graduados.</p>
-                    <div class="news-meta">
-                        <time datetime="2025-09-29">29 de septiembre de 2025</time>
-                        <span>•</span>
-                        <span>0 Comments</span>
-                    </div>
-                </div>
-            </article>
-
-
-
-            <article class="news-card">
-                <img src="https://placehold.co/600x400" alt="Investigación">
-                <div class="news-content">
-                    <h3>Investigadores UNIVO publican en revista indexada</h3>
-                    <p>Estudio sobre desarrollo sostenible en comunidades rurales salvadoreñas.</p>
-                    <div class="news-meta">
-                        <time datetime="2025-09-15">15 de septiembre de 2025</time>
-                    </div>
-                </div>
-            </article>
         </div>
 
         <div class="news-action">
@@ -161,46 +182,8 @@
     </div>
 </section>
 
-<!-- Faculties Section -->
-<section class="faculties">
-    <div class="container">
-        <header class="section-header">
-            <h2>Nuestras facultades</h2>
-            <p>Descubre tu camino al éxito.</p>
-        </header>
 
-        <div class="carousel">
-            <div class="carousel-track">
-                <article class="faculty-card">
-                    <div class="faculty-img">
-                        <img src="https://placehold.co/286x379" alt="Facultad de Ingeniería y Arquitectura">
-                        <h3>Facultad de Ingeniería y Arquitectura</h3>
-                    </div>
-                    <button class="btn btn-info">Más información</button>
-                </article>
 
-                <article class="faculty-card">
-                    <div class="faculty-img">
-                        <img src="https://placehold.co/286x379" alt="Facultad de Ciencias Jurídicas">
-                        <h3>Facultad de Ciencias Jurídicas</h3>
-                    </div>
-                    <button class="btn btn-info">Más información</button>
-                </article>
-
-                <article class="faculty-card">
-                    <div class="faculty-img">
-                        <img src="https://placehold.co/286x379" alt="Facultad Ciencias de la Salud">
-                        <h3>Facultad Ciencias de la Salud</h3>
-                    </div>
-                    <button class="btn btn-info">Más información</button>
-                </article>
-            </div>
-            <button class="carousel-btn" aria-label="Siguiente">
-                <span class="arrow-icon"></span>
-            </button>
-        </div>
-    </div>
-</section>
 
 <!-- Contact Section -->
 <section class="contact">
@@ -254,7 +237,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-logo">
-            <img src="https://placehold.co/200x74" alt="Logo UNIVO">
+            <img src="img/logoUNIVO_blue.png" alt="Logo UNIVO">
         </div>
 
         <div class="footer-content">
@@ -296,7 +279,7 @@
         </div>
 
         <div class="footer-badge">
-            <img src="https://placehold.co/150x149" alt="CDA">
+            <img src="img/CDA.webp" alt="CDA">
             <h4>UNIVERSIDAD TRANSPARENTE</h4>
             <p>Acceso a información pública</p>
         </div>
