@@ -246,10 +246,58 @@ a {
 
 /* ========== Process Section ========== */
 .process {
+    position: relative;
     padding: 80px 24px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow: hidden;
 }
 
+
+/* Imagen de fondo de estudiantes */
+.process-bg {
+    position: absolute;
+    top: -1px;
+    left: 11%;
+    transform: translateX(120%);
+    width: 600px;
+    z-index: 2;
+}
+
+
+/* Fondo de líneas verdes */
+.process-lines-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 1;
+}
+
+.process-lines-bg img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.process-bg img {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+/* Contenido principal encima */
+.process-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    color: var(--navy);
+    margin-left: 100px;
+}
+
+/* Títulos y subtítulos */
 .process h2 {
     color: var(--navy);
     font-size: clamp(20px, 3vw, 24px);
@@ -265,6 +313,7 @@ a {
     max-width: 600px;
 }
 
+/* Caja que contiene las cards */
 .process-box {
     background: var(--navy);
     border-radius: 15px;
@@ -274,12 +323,14 @@ a {
     gap: 24px;
 }
 
+/* Grid de las cards */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 24px;
 }
 
+/* Estilo individual de cada card */
 .card {
     background: var(--navy);
     color: var(--white);
@@ -289,6 +340,7 @@ a {
     align-items: center;
     text-align: center;
     gap: 16px;
+    border-radius: 12px;
 }
 
 .card-icon {
@@ -311,6 +363,14 @@ a {
     font-size: 14px;
     opacity: 0.9;
 }
+
+/* Botón */
+.process-box .btn-primary {
+    margin-top: 24px;
+    align-self: center;
+}
+
+
 
 /* ========== News Section ========== */
 .news {
@@ -839,6 +899,7 @@ a {
 /* ---------- Media query intermedia: Tablet / Laptop pequeñas (769px – 992px) ---------- */
 @media (max-width: 992px) and (min-width: 769px) {
 
+    /* Header */
     .header {
         padding: 20px 24px;
         flex-wrap: wrap;
@@ -883,14 +944,34 @@ a {
         padding: 50px 24px;
     }
 
+    /* Contenido principal del process */
+    .process-content {
+        max-width: 700px;      /* más pequeño que desktop */
+        margin-left: auto;      /* centra horizontalmente */
+        margin-right: auto;
+        text-align: left;
+        position: relative;
+        z-index: 3;
+    }
+
+    /* Alinear las cards horizontalmente */
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        justify-items: center;   /* centra las cards horizontalmente */
+        gap: 20px;
+    }
+
+    /* Ocultar las imágenes de fondo en tablets */
+    .process-bg,
+    .process-lines-bg {
+        display: none;
+    }
+
     .process-box {
         padding: 24px;
     }
 
-    .cards {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
+    /* Noticias */
     .news-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -918,21 +999,25 @@ a {
         object-fit: cover;
     }
 
+    /* Carrusel */
     .carousel-track {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
+    /* Facultades */
     .faculties-action {
         display: flex;
         justify-content: center;
         margin-top: 30px;
     }
 
+    /* Contacto */
     .contact-wrapper {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
 
+    /* Footer */
     .footer .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -973,6 +1058,8 @@ a {
 }
 
 
+
+
 /* ---------- Tablet / Móvil grandes (≤768px) ---------- */
 @media (max-width: 768px) {
 
@@ -1007,11 +1094,11 @@ a {
         margin: 0 auto;
     }
 
-    .hero-actions {
-        flex-direction: column;
-        justify-content: center;
-        gap: 16px;
-        width: 100%;
+    .hero-actions .btn.btn-primary,
+    .hero-actions .btn.btn-outline {
+        width: auto;           /* ancho según contenido */
+        padding: 12px 24px;    /* ajusta tamaño del botón */
+        align-self: center;    /* centra el botón dentro del contenedor */
     }
 
     /* Secciones generales */
@@ -1021,12 +1108,26 @@ a {
         padding: 40px 16px;
     }
 
+
+    .process-bg,
+    .process-lines-bg {
+        display: none;
+    }
+
     .process-box {
+        margin: 0 auto;
         padding: 20px;
+    }
+
+    .process-content {
+        margin-left: 0;      /* elimina el margen de desktop */
+        margin-right: 0;
+        text-align: center;  /* centra el texto y el contenido */
     }
 
     .cards {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .news-grid {
