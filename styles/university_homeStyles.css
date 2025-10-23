@@ -946,8 +946,8 @@ a {
 
     /* Contenido principal del process */
     .process-content {
-        max-width: 700px;      /* más pequeño que desktop */
-        margin-left: auto;      /* centra horizontalmente */
+        max-width: 700px;
+        margin-left: auto;
         margin-right: auto;
         text-align: left;
         position: relative;
@@ -957,7 +957,7 @@ a {
     /* Alinear las cards horizontalmente */
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        justify-items: center;   /* centra las cards horizontalmente */
+        justify-items: center;
         gap: 20px;
     }
 
@@ -1077,9 +1077,8 @@ a {
         margin: 0 auto;
     }
 
-    /* OJO: SE DEBE ARREGLAR CON UN MENU DE HAMBURGUESA */
     .nav {
-        display: none; /* se oculta navegación en móviles */
+        display: none;
     }
 
     /* Hero */
@@ -1096,9 +1095,9 @@ a {
 
     .hero-actions .btn.btn-primary,
     .hero-actions .btn.btn-outline {
-        width: auto;           /* ancho según contenido */
-        padding: 12px 24px;    /* ajusta tamaño del botón */
-        align-self: center;    /* centra el botón dentro del contenedor */
+        width: auto;
+        padding: 12px 24px;
+        align-self: center;
     }
 
     /* Secciones generales */
@@ -1120,9 +1119,9 @@ a {
     }
 
     .process-content {
-        margin-left: 0;      /* elimina el margen de desktop */
+        margin-left: 0;
         margin-right: 0;
-        text-align: center;  /* centra el texto y el contenido */
+        text-align: center;
     }
 
     .cards {
