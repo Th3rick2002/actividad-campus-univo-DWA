@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,10 +79,10 @@
                         <nav class="sidebar__navigation">
                             <ul class="sidebar__tabs">
                                 <li class="sidebar__tab">
-                                    <button class="tab__button">Carreras Virtuales</button>
+                                    <button class="tab__button tab__button--active">Carreras Virtuales</button>
                                 </li>
                                 <li class="sidebar__tab">
-                                    <button class="tab__button tab__button--active">Licenciaturas</button>
+                                    <button class="tab__button">Licenciaturas</button>
                                 </li>
                                 <li class="sidebar__tab">
                                     <button class="tab__button">Doctorados</button>
@@ -106,11 +105,7 @@
                         <button class="mobile-nav__arrow mobile-nav__arrow--left" aria-label="Anterior">
                             <div class="arrow__icon arrow__icon--left"></div>
                         </button>
-                        <div class="mobile-nav__tabs">
-                            <button class="mobile-tab__button">Carreras Virtuales</button>
-                            <button class="mobile-tab__button mobile-tab__button--active">Licenciaturas</button>
-                            <button class="mobile-tab__button">Doctorados</button>
-                        </div>
+                        <div class="mobile-nav__tabs"></div>
                         <button class="mobile-nav__arrow mobile-nav__arrow--right" aria-label="Siguiente">
                             <div class="arrow__icon arrow__icon--right"></div>
                         </button>
@@ -119,24 +114,12 @@
                     <div class="programs__main-content">
                         <div class="programs__card">
                             <div class="card__content">
-                                <h3 class="card__title">Licenciaturas</h3>
+                                <h3 class="card__title">Carreras Virtuales</h3>
                                 <ul class="card__program-list">
-                                    <li class="program-item">Licenciatura en Relaciones y Negocios Internacionales</li>
-                                    <li class="program-item">Licenciatura en Idioma Inglés</li>
                                     <li class="program-item">Licenciatura en Contaduría Pública</li>
-                                    <li class="program-item">Licenciatura en Medicina Veterinaria</li>
-                                    <li class="program-item">Licenciatura en Educación Inicial y Parvularia</li>
-                                    <li class="program-item">Licenciatura en Ciencias Jurídicas</li>
+                                    <li class="program-item">Ingeniería en Desarrollo de Software</li>
+                                    <li class="program-item">Licenciatura en Mercadotecnia</li>
                                     <li class="program-item">Licenciatura en Administración de Empresas</li>
-                                    <li class="program-item">Licenciatura en Turismo (Semipresencial)</li>
-                                    <li class="program-item">Licenciatura en Comunicaciones</li>
-                                    <li class="program-item">Licenciatura en Psicología</li>
-                                    <li class="program-item">Licenciatura en Marketing y Publicidad Digital</li>
-                                    <li class="program-item">Licenciatura en Laboratorio Clínico</li>
-                                    <li class="program-item">Licenciatura en Diseño Gráfico y Multimedia</li>
-                                    <li class="program-item">Licenciatura en Educación Física y Deportes</li>
-                                    <li class="program-item">Licenciatura en Enfermería</li>
-                                    <li class="program-item">Licenciatura en Psicopedagogía</li>
                                 </ul>
                             </div>
                         </div>
@@ -207,7 +190,137 @@
                 <p>Acceso a información pública</p>
             </div>
         </div>
-    </footer
+    </footer>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.sidebar__tab .tab__button');
+        const mobileTabsContainer = document.querySelector('.mobile-nav__tabs');
+        const cardTitle = document.querySelector('.card__title');
+        const programList = document.querySelector('.card__program-list');
+        const leftArrow = document.querySelector('.mobile-nav__arrow--left');
+        const rightArrow = document.querySelector('.mobile-nav__arrow--right');
+
+        const programs = {
+            'Carreras Virtuales': [
+                'Licenciatura en Contaduría Pública',
+                'Ingeniería en Desarrollo de Software',
+                'Licenciatura en Mercadotecnia',
+                'Licenciatura en Administración de Empresas'
+            ],
+            'Licenciaturas': [
+                'Licenciatura en Relaciones y Negocios Internacionales',
+                'Licenciatura en Idioma Inglés',
+                'Licenciatura en Contaduría Pública',
+                'Licenciatura en Medicina Veterinaria',
+                'Licenciatura en Educación Inicial y Parvularia',
+                'Licenciatura en Ciencias Jurídicas',
+                'Licenciatura en Administración de Empresas',
+                'Licenciatura en Turismo (Semipresencial)',
+                'Licenciatura en Comunicaciones',
+                'Licenciatura en Psicología',
+                'Licenciatura en Marketing y Publicidad Digital',
+                'Licenciatura en Laboratorio Clínico',
+                'Licenciatura en Diseño Gráfico y Multimedia',
+                'Licenciatura en Educación Física y Deportes',
+                'Licenciatura en Enfermería',
+                'Licenciatura en Psicopedagogía'
+            ],
+            'Doctorados': [
+                'Doctorado en Medicina',
+                'Doctorado en Cirugía Dental'
+            ],
+            'Arquitectura e Ingenieria': [
+                'Arquitectura',
+                'Ingeniería en Agroindustria',
+                'Ingeniería Industrial',
+                'Ingeniería Agronómica',
+                'Ingeniería Civil',
+                'Ingeniería en Desarrollo de Software',
+                'Ingeniería en Energía y Eficiencia Energética'
+            ],
+            'Técnicos': [
+                'Técnico en Idioma Inglés',
+                'Técnico en Diseño Gráfico',
+                'Técnico en Optometría',
+                'Tecnólogo en Enfermería',
+                'Técnico en Actividad Física y Entrenamiento Deportivo',
+                'Técnico en Banca y Negocios'
+            ],
+            'Profesorados': [
+                'Profesorado en Idioma Inglés',
+                'Profesorado en Educación Física y Deportes',
+                'Profesorado en Matemáticas',
+                'Profesorado en Educación Inicial y Parvularia',
+                'Profesorado en Educación Artística'
+            ]
+        };
+
+        const programKeys = Object.keys(programs);
+        let mobileTabs = [];
+        let currentIndex = 0;
+
+        function setupMobileTabs() {
+            mobileTabsContainer.innerHTML = '';
+            mobileTabs = programKeys.map((key, index) => {
+                const button = document.createElement('button');
+                button.classList.add('mobile-tab__button');
+                button.textContent = key;
+                if (index === 0) { // Set Carreras Virtuales as default active
+                    button.classList.add('mobile-tab__button--active');
+                }
+                button.addEventListener('click', () => {
+                    updateContent(key);
+                    mobileTabs.forEach(t => t.classList.remove('mobile-tab__button--active'));
+                    button.classList.add('mobile-tab__button--active');
+                });
+                return button;
+            });
+            updateVisibleMobileTabs();
+        }
+
+        function updateVisibleMobileTabs() {
+            mobileTabsContainer.innerHTML = '';
+            const visibleTabs = mobileTabs.slice(currentIndex, currentIndex + 3);
+            visibleTabs.forEach(tab => mobileTabsContainer.appendChild(tab));
+        }
+
+        leftArrow.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateVisibleMobileTabs();
+            }
+        });
+
+        rightArrow.addEventListener('click', () => {
+            if (currentIndex < programKeys.length - 3) {
+                currentIndex++;
+                updateVisibleMobileTabs();
+            }
+        });
+
+        function updateContent(tabName) {
+            cardTitle.textContent = tabName;
+            programList.innerHTML = '';
+            programs[tabName].forEach(program => {
+                const li = document.createElement('li');
+                li.classList.add('program-item');
+                li.textContent = program;
+                programList.appendChild(li);
+            });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('tab__button--active'));
+                tab.classList.add('tab__button--active');
+                updateContent(tab.textContent);
+            });
+        });
+
+        setupMobileTabs();
+        updateContent('Carreras Virtuales');
+    });
+</script>
 </body>
 </html>
