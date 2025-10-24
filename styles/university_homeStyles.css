@@ -213,8 +213,8 @@ a {
 
     /* Fondo: gradiente + imagen */
     background-image:
-            linear-gradient(rgba(0, 53, 107, 0.6), rgba(0, 53, 107, 0.6)),
-            url('../img/IMAGES_univo/UNIVO-CU.webp');
+        linear-gradient(rgba(0, 53, 107, 0.6), rgba(0, 53, 107, 0.6)),
+        url('../img/IMAGES_univo/UNIVO-CU.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -376,6 +376,7 @@ a {
 .news {
     padding: 80px 24px;
     background: #f8f9fa;
+
 }
 
 .news-grid {
@@ -388,14 +389,9 @@ a {
 /* 🌍 Estilos generales (desktop o pantallas grandes) */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 320px;
-    gap: 16px;
-}
-
-.news-card-large {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 550px;
+    gap: 3%;
 }
 
 .news-card-wide {
@@ -413,6 +409,9 @@ a {
     display: flex;
     flex-direction: column;
     position: relative;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .news-card:hover {
@@ -421,17 +420,19 @@ a {
 }
 
 .news-card img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    transition: transform var(--transition);
-    flex-shrink: 0;
+    z-index: 0;
+    display: block;
 }
 
-.news-card-large img {
+/*.news-card-large img {
     height: 350px;
 }
-
+*/
 .news-card-wide {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -444,18 +445,24 @@ a {
 }
 
 
-
-
 .news-card:hover img {
     transform: scale(1.05);
 }
 
 .news-content {
+    background-color: white;
+    position: relative;
+    z-index: 2;
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    flex: 1;
+    color: var(--navy);
+    margin-top: auto;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+    width: 90%;
+
+    margin-bottom: 5%;
 }
 
 .news-card-large .news-content {
@@ -467,7 +474,7 @@ a {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.4;
-    margin: 0;
+    margin-top: 0;
 }
 
 .news-card-large h3 {
@@ -492,8 +499,7 @@ a {
     margin-top: auto;
 }
 
-.badge {
-    background: var(--yellow);
+/*.badge {
     color: var(--navy);
     padding: 4px 12px;
     border-radius: 12px;
@@ -502,7 +508,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
+*/
 .news-action {
     display: flex;
     justify-content: center;
@@ -893,6 +899,33 @@ a {
     .faculties-action {
         display: flex;
     }
+
+    /*---------- new secction ---------*/
+
+
+    .news-grid {
+        grid-template-columns: repeat(2);
+        grid-auto-rows: 1200px;
+        gap: 2%;
+    }
+
+    .news-card {
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .news-card img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .news-content {
+        width: 85%;
+        padding: 16px;
+        margin-bottom: 4%;
+        font-size: 0.95rem;
+    }
 }
 
 
@@ -946,8 +979,10 @@ a {
 
     /* Contenido principal del process */
     .process-content {
-        max-width: 700px;      /* más pequeño que desktop */
-        margin-left: auto;      /* centra horizontalmente */
+        max-width: 700px;
+        /* más pequeño que desktop */
+        margin-left: auto;
+        /* centra horizontalmente */
         margin-right: auto;
         text-align: left;
         position: relative;
@@ -957,7 +992,8 @@ a {
     /* Alinear las cards horizontalmente */
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        justify-items: center;   /* centra las cards horizontalmente */
+        justify-items: center;
+        /* centra las cards horizontalmente */
         gap: 20px;
     }
 
@@ -975,7 +1011,7 @@ a {
     .news-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
+        grid-auto-rows: 500px;
         gap: 20px;
     }
 
@@ -995,8 +1031,15 @@ a {
     .news-card-large img,
     .news-card-wide img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
+    }
+
+    .news-content {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.7rem;
+        margin-bottom: 6%;
     }
 
     /* Carrusel */
@@ -1079,7 +1122,8 @@ a {
 
     /* OJO: SE DEBE ARREGLAR CON UN MENU DE HAMBURGUESA */
     .nav {
-        display: none; /* se oculta navegación en móviles */
+        display: none;
+        /* se oculta navegación en móviles */
     }
 
     /* Hero */
@@ -1096,9 +1140,12 @@ a {
 
     .hero-actions .btn.btn-primary,
     .hero-actions .btn.btn-outline {
-        width: auto;           /* ancho según contenido */
-        padding: 12px 24px;    /* ajusta tamaño del botón */
-        align-self: center;    /* centra el botón dentro del contenedor */
+        width: auto;
+        /* ancho según contenido */
+        padding: 12px 24px;
+        /* ajusta tamaño del botón */
+        align-self: center;
+        /* centra el botón dentro del contenedor */
     }
 
     /* Secciones generales */
@@ -1120,9 +1167,11 @@ a {
     }
 
     .process-content {
-        margin-left: 0;      /* elimina el margen de desktop */
+        margin-left: 0;
+        /* elimina el margen de desktop */
         margin-right: 0;
-        text-align: center;  /* centra el texto y el contenido */
+        text-align: center;
+        /* centra el texto y el contenido */
     }
 
     .cards {
@@ -1132,8 +1181,8 @@ a {
 
     .news-grid {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 450px;
         gap: 20px;
     }
 
@@ -1144,19 +1193,33 @@ a {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        height: auto;
+        height: 100%;
         border-radius: 12px;
         overflow: hidden;
-        grid-column: auto ;
-        grid-row: auto ;
+        grid-column: auto;
+        grid-row: auto;
     }
 
     .news-card img,
     .news-card-large img,
     .news-card-wide img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
+    }
+
+    .news-content h3 {
+        color: var(--navy);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin-top: 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .carousel-track {
@@ -1222,6 +1285,7 @@ a {
 
 /* ---------- Mobile pequeños (≤480px) ---------- */
 @media (max-width: 480px) {
+
     /* Botones */
     .btn {
         width: 100%;
