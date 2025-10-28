@@ -11,6 +11,12 @@
 <!-- Header -->
 <header class="header">
     <img src="img/logoUNIVO_white.png" alt="Logo UNIVO" class="logo">
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+
     <nav class="nav">
         <a href="#inicio" class="nav-link">Inicio</a>
         <a href="#nosotros" class="nav-link">Nosotros</a>
@@ -305,5 +311,20 @@
         </div>
     </div>
 </footer>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
+
+
+
+
+
+
 </body>
 </html>
+
