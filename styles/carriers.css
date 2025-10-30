@@ -612,7 +612,7 @@ body {
         align-self: stretch;
         padding: var(--spacing-md) 0;
     }
-    
+
     .sidebar__navigation {
         width: 100%;
     }
@@ -716,7 +716,7 @@ body {
         align-items: flex-start;
         text-align: left;
     }
-    
+
     .footer__certification {
         order: 0;
     }

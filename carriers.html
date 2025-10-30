@@ -193,6 +193,18 @@
     </footer>
 </div>
 <script>
+    const menuToggle = document.querySelector('.header__menu-toggle');
+    const nav = document.querySelector('.header__navigation');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+
+
+
+
     document.addEventListener('DOMContentLoaded', () => {
         const tabs = document.querySelectorAll('.sidebar__tab .tab__button');
         const mobileTabsContainer = document.querySelector('.mobile-nav__tabs');
